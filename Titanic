@@ -1,0 +1,14 @@
+train <- read.csv('C:/Users/mcmakinkp/Documents/DataAnalyticsStuff/TitanicData/train.csv')
+test <- read.csv('C:/Users/mcmakinkp/Documents/DataAnalyticsStuff/TitanicData/test.csv')
+
+train$set <- "train"
+test$set <- "test"
+test$Survived <- NA
+full <- rbind(train, test)
+
+# check data
+str(full)
+# dataset dimensions
+dim(full)
+# Unique values per column
+lapply(full, function(x) length(unique(x))) 
